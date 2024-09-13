@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky World Registration</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            max-width: 1200px; /* Kích thước tối đa của wrapper */
+            margin: 0 auto; /* Căn giữa wrapper */
+            padding: 20px;
+            background-color: rgb(97, 173, 227);
+        }
+
+        header {
+            background-color: rgb(97, 173, 227);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed white; /* Đường viền nét đứt */
+        }
+
+        nav {
+            margin-right: auto; /* Đẩy nav về bên trái */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        h1 {
+            margin: 0;
+            text-align: right; /* Căn phải */
+            flex-grow: 1; /* Chiếm không gian còn lại */
+            color: white; /* Màu chữ trắng */
+            text-shadow: 4px 4px 8px rgba(18, 0, 182, 0.9); /* Đổ bóng */
+        }
+
+        main {
+            display: flex;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(97, 173, 227);
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            margin-left: 80px;
+        }
+
+        .form-group label {
+            flex-basis: 30%; /* Chiếm 30% chiều rộng cho label */
+            margin-right: 10px; /* Khoảng cách giữa label và input */
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            flex-grow: 1; /* Ô điền chiếm không gian còn lại */
+            padding: 8px;
+            border: 2px solid #0b18c2; /* Viền màu xanh biển */
+            border-radius: 4px;
+            box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng */
+        }
+
+        .form-group textarea {
+            resize: vertical; /* Cho phép thay đổi kích thước theo chiều dọc */
+        }
+        .button-group {
+            display: flex;
+            justify-content: flex-start; /* Căn chỉnh nút về bên trái */
+            margin-top: 15px; /* Khoảng cách trên nút */
+            margin-left:  150px;
+        }
+
+        .button-group button {
+            margin-right: 10px; 
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #d1d1d1; 
+            color: black;
+            cursor: pointer;
+            flex-basis: 30%; 
+            border: 2px dashed #0b18c2;
+            
+        }
+
+        .button-group button:hover {
+            background-color: #6c6c6c; /* Màu nền khi hover */
+        }
+        aside {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .responsive-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .arrival-message {
+            text-align: left;
+            color: #0011ff;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        .arrival-message h3 {
+            text-shadow: 4px 4px 4px #0011ff; 
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgb(97, 173, 227);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            border-top: 2px dashed white; /* Đường viền nét đứt */
+            margin-top: 20px; /* Khoảng cách giữa main và footer */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <h1>Sky World</h1>
+        </header>
+        <main>
+            <section class="form-section">
+                <h2>Registration information</h2>
+                <p>Start your travel planning right now with our online tour registration form. Please tell us a little about yourself...</p>
+                <form>
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <select id="title" name="title">
+                            <option value="Mr">Mr.</option>
+                            <option value="Mrs">Mrs.</option>
+                            <option value="Ms">Ms.</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name*:</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Mailing Address:</label>
+                        <input type="text" id="address" name="address" placeholder="Mailing Address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" placeholder="City">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" placeholder="Country">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="questions">Specific questions or requests about your tour:</label>
+                        <textarea id="questions" name="questions" placeholder="Specific questions or requests about your tour"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="button-group">
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <aside>
+                <img src="img/sky.png" alt="Beautiful clouds" class="responsive-image">
+                <div class="arrival-message">
+                    <h3>You’ve arrived.</h3>
+                    <p>Journeys as great as the destinations.</p>
+                </div>
+            </aside>
+        </main>
+        <footer>
+            <p>&copy; 2016 Sky World Tours. All rights reserved.</p>
+            <p>Contact information: Student Name | Student ID | Testing date: 16 Sept 2016</p>
+        </footer>
+    </div>
+</body>
+</html>

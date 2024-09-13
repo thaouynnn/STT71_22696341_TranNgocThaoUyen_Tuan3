@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autumn Travel Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Xóa margin cho body */
+            background-color: #f9f9f9;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto; /* Căn giữa */
+            padding: 0; /* Xóa padding */
+            background-color: white; /* Màu nền trắng */
+        }
+        header {
+            background-color: #8B4513; /* Màu nâu */
+            color: #006400; /* Màu xanh lá mạ đậm */
+            padding: 20px;
+            text-align: left;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: -5px -5px 5px white; /* Bóng đổ màu trắng */
+            margin: 0; /* Xóa margin */
+            
+        }
+        nav {
+            background-color: white; /* Đã đổi màu nền thành trắng */
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc; /* Thêm viền dưới */
+        }
+        nav a {
+            margin: 0 15px;
+            color: burlywood;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .banner {
+            width: 100%; /* Chiều rộng bằng 100% */
+            height: 200px; /* Chiều cao tự động */
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .main-content {
+            margin-left: 70px;
+            flex: 3;
+            background-color: white;
+            padding: 20px;
+            border-right:1px solid #6B3E2E;
+            margin-right: 30px;
+            color: rgb(207, 141, 55)
+        }
+        .sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Khoảng cách giữa các hộp */
+        }
+        .box {
+
+            margin-right: 30px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .links {
+            background-color: #f1e2c5; /* Màu nền giống hình ảnh */
+            border-radius: 8px; /* Bo góc cho hộp */
+            padding: 15px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            color: black;
+            margin: 0; /* Xóa margin */
+            background-image: url(img/footer.png);
+        }
+        h2 {
+            color: rgb(207, 141, 55); 
+        }
+        .input-field {
+            border: none; 
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+            padding: 10px 0; 
+            margin-bottom: 20px; 
+            font-size: 16px; 
+        }
+        .input-field:focus {
+            outline: none; 
+            border-bottom: 1px solid #8B4513; 
+        }
+        button {
+            background-color: #8B4513; 
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #6B3E2E;
+        }
+        .info-image {
+            width: 100px; 
+            height: auto; 
+            display: block;
+        }
+        .links ul {
+            list-style-type: disc; 
+            margin: 0; 
+            padding-left: 20px;
+        }
+        .links li {
+            color: #8B4513; 
+        }
+        .links a {
+            color: #8B4513; 
+            text-decoration: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            AUTUMN TRAVEL COMPANY
+        </header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Services</a>
+            <a href="#">Order</a>
+        </nav>
+        <img src="../bai3/img/line.png" alt="Travel Banner" class="banner"> <!-- Thay đổi "banner.jpg" bằng đường dẫn đến hình ảnh bạn muốn chèn -->
+        <div class="container">
+            <div class="main-content">
+                <h2>Sign up for membership benefits</h2>
+                <p>Our philosophical values are transparency, respect, formality and responsibility. Our stimulus is your enthusiasm. Our motto is your satisfaction.</p>
+                <form>
+                    <input type="text" class="input-field" placeholder="Username" required>
+                    <input type="email" class="input-field" placeholder="E-mail" required>
+                    <input type="password" class="input-field" placeholder="Password" required>
+                    <input type="password" class="input-field" placeholder="Retype password" required>
+                    <button type="submit">SIGN ME UP</button>
+                </form>
+            </div>
+            <aside class="sidebar">
+                <div class="box links">
+                    <h2>Links</h2>
+                    <ul>
+                        <li><a href="#">Make your Own Tour</a></li>
+                        <li><a href="#">Maldives Tours</a></li>
+                        <li><a href="#">Nature & Adventure</a></li>
+                        <li><a href="#">Readymade Tours</a></li>
+                        <li><a href="#">Europe Tours</a></li>
+                        <li><a href="#">Rusla Tours</a></li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h2>More info</h2>
+                    <img src="img/leaf.png" alt="Info Image" class="info-image"> 
+                    Our purpose is the client who gives to us the opportunity to serve and to make known the reality around the world.
+                </div>
+            </aside>
+        </div>
+        <footer class="footer">
+            &copy; 2017 Software Engineering Department | Test Date: 16 Sept 2017
+        </footer>
+    </div>
+</body>
+</html>

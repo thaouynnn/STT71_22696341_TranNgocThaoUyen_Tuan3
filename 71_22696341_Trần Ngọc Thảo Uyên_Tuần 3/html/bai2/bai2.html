@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowerBox 360</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto; /* Căn giữa wrapper */
+            background-color: white; /* Nền màu trắng cho wrapper */
+        }
+        header {
+            background-color: #274f77;
+            color: white;
+            display: flex; /* Sử dụng flexbox để chia header */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            padding: 10px 20px;
+        }
+        .left-section {
+            display: flex; /* Sử dụng flexbox cho phần bên trái */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            flex: 1; /* Chiếm không gian còn lại */
+        }
+        header img {
+            height: 50px; /* Chiều cao của logo */
+            margin-right: 15px; /* Khoảng cách giữa logo và tiêu đề */
+        }
+        .header-text {
+            text-align: left; /* Căn trái cho chữ */
+        }
+        .header-text h1 {
+            margin: 0; /* Không có margin cho tiêu đề */
+        }
+        .header-text p {
+            margin: 0; /* Không có margin cho mô tả */
+        }
+        .search-container {
+            margin-left: auto; /* Đẩy ô tìm kiếm sang phải */
+            display: flex; /* Sử dụng flexbox để căn chỉnh hộp tìm kiếm */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            color: white;
+            
+        }
+        .search-container input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            width: 200px; /* Chiều rộng của ô tìm kiếm */
+            background-color: #001f3d;
+        }
+        .search-container button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            background-color: #001f3d; /* Màu nền xám nhạt */
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        .search-container button:hover {
+            background-color: #b0b0b0; /* Màu nền khi hover */
+        }
+        nav {
+            background-color: #274f77; /* Màu nền giống header */
+            display: flex; /* Sử dụng flexbox cho nav */
+            justify-content: right; /* Căn giữa các mục trong nav */
+        }
+        nav div {
+            background-color: #005b99; /* Màu xanh nhạt */
+            padding: 10px;
+            margin: 0 10px; /* Khoảng cách giữa các mục */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .contact-form {
+            flex: 2;
+            margin-right: 20px;
+            background-color: white; /* Nền trắng cho contact form */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: none; /* Không có đổ bóng */
+        }
+        .contact-form h2 {
+            margin-top: 0;
+            border-bottom: 2px dashed #ccc; /* Đường viền dưới nét đứt */
+            padding-bottom: 5px; /* Khoảng cách giữa tiêu đề và đường viền */
+        }
+        .contact-form label {
+            display: block;
+            margin: 5px 0 2px; /* Giảm khoảng cách */
+        }
+        .contact-form .row {
+            display: flex; /* Sử dụng flexbox cho hàng */
+            justify-content: space-between; /* Căn chỉnh các trường cách đều */
+            margin-bottom: 5px; /* Giảm khoảng cách giữa các hàng */
+        }
+        .contact-form .row div {
+            margin-right: 10px; /* Khoảng cách giữa các ô */
+        }
+        .contact-form .row div:last-child {
+            margin-right: 0; /* Không có khoảng cách cho ô cuối cùng */
+        }
+        .contact-form input {
+            width: 100%; /* Chiều rộng 100% để dài ra */
+            max-width: 300px; /* Chiều rộng tối đa cho mỗi ô */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+        }
+        .contact-form textarea {
+            width: calc(100% - 20px); /* Chiều rộng textarea */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+        }
+        .contact-form button {
+            padding: 10px 15px;
+            background-color: #d3d3d3; /* Màu nền xám nhạt */
+            color: black; /* Màu chữ đen */
+            border: none; /* Không có bo khung */
+            border-radius: 5px; /* Bo góc */
+            cursor: pointer;
+            margin-right: 10px; /* Khoảng cách giữa các nút */
+        }
+        .contact-form button:hover {
+            background-color: #b0b0b0; /* Màu nền khi hover */
+        }
+        .info {
+            background-color: white; /* Nền trắng cho info */
+            padding: 20px;
+            border-radius: 5px;
+            margin-left: 20px; /* Khoảng cách giữa các phần */
+            flex: 1; /* Chiếm không gian còn lại */
+            box-shadow: none; /* Xóa box shadow */
+        }
+        .info h2 {
+            border-bottom: 2px dashed #ccc; 
+            padding-bottom: 5px; 
+        }
+        .highlight {
+            color: red; 
+            text-shadow: 4px 4px 5px green; 
+        }
+        .discounts {
+            background-color: #e0e0e0; 
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+            margin-left: 20px; 
+            flex: 1; 
+        }
+        .discounts h2 {
+            border-bottom: 2px dashed #ccc; 
+            padding-bottom: 5px; 
+        }
+        footer {
+            text-align: left;
+            padding: 10px 10px;
+            background-color: #003366;
+            color: white;
+            width: 100%; 
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="left-section">
+                <img src="img/flower.png" alt="FlowerBox Logo"> 
+                <div class="header-text">
+                    <h1>FlowerBox 360</h1>
+                    <p>...to get your daily dose of luxury roses!</p>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search the site..." />
+                <button>GO</button>
+            </div>
+        </header>
+        <nav>
+            <div><a href="#">Home</a></div>
+            <div><a href="#">Promotion</a></div>
+            <div><a href="#">Gift Baskets</a></div>
+            <div><a href="#">Flower Services</a></div>
+            <div><a href="#">About</a></div>
+        </nav>
+        <div class="container">
+            <div class="contact-form">
+                <h2>Why Not Contact Us Today!</h2>
+                <p class="highlight">For FlowerBox 360 shoppers, that means not only can you send your friends and loved ones the highest quality flowers found online, but that you can do so at a great value.</p>
+                <form>
+                    <div class="row">
+                        <div>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="telephone">Telephone:</label>
+                            <input type="tel" id="telephone" name="telephone">
+                        </div>
+                        <div>
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                    </div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </form>
+            </div>
+            <div class="info">
+                <h2>FlowerBox 360 Info!</h2>
+                <p><strong>Operating Hours:</strong><br>
+                Monday-Friday: 9:00am - 5:00pm<br>
+                Saturday: 9:00am - 1:00pm<br>
+                Sunday: Closed (No Deliveries)<br>
+                ORDER ONLINE 24/7</p>
+                <p>Software Engineering Dept. <br>
+                Information Technology Faculty <br>
+                First Floor, H Building<br></p>
+                <p><strong></strong><br>
+                12 Nguyen Van Bao St., Ward 4<br>
+                Go Vap District, Ho Chi Minh City<br>
+                Tel: 0283 8940 390<br>
+                Fax: 0283 9940 954</p>
+            </div>
+            <div class="discounts">
+                <h2>Discounts & Specials</h2>
+                <img src="img/rose.png" alt="Flower" style="width: 100%;"> 
+                <p>FlowerBox 360 offers many great discounts throughout the year, from coupons and coupon codes, to promo codes and other savings. We also offer military flower discounts to our wonderful troops!</p>
+                <a href="#" style="color: #005b99; text-decoration: none;">Read More &gt;&gt;</a>
+            </div>
+        </div>
+        <footer>
+            <p>Copyright &copy; 2017 - All Rights Reserved - Software Engineering Department - Industrial University of Ho Chi Minh City</p>
+        </footer>
+    </div>
+</body>
+</html>
